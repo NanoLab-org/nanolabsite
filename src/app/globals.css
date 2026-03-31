@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* === NanoLab Brand Colors === */
+  --color-nl-primary: #0f1c2e;
+  --color-nl-accent: #00d9e9;
+  --color-nl-surface: #f8f9fa;
+  --color-nl-white: #ffffff;
+
+  /* === Semantic aliases === */
+  --color-nl-text: #0f1c2e;
+  --color-nl-text-muted: rgba(15, 28, 46, 0.6);
+  --color-nl-border: rgba(15, 28, 46, 0.15);
+  --color-nl-accent-subtle: rgba(0, 217, 233, 0.1);
+  --color-nl-accent-glow: rgba(0, 217, 233, 0.25);
+
+  /* === Fonts === */
+  --font-syne: var(--font-syne-var), sans-serif;
+  --font-dm: var(--font-dm-sans), sans-serif;
+
+  /* === Font Sizes === */
+  --font-size-nl-h1: 64px;
+  --font-size-nl-h1--line-height: 1.05;
+  --font-size-nl-h1--letter-spacing: -3.2px;
+
+  --font-size-nl-h2: 48px;
+  --font-size-nl-h2--line-height: 1.1;
+  --font-size-nl-h2--letter-spacing: -1.92px;
+
+  --font-size-nl-h3: 28px;
+  --font-size-nl-h3--line-height: 1.2;
+
+  --font-size-nl-h4: 24px;
+  --font-size-nl-h4--line-height: 1.3;
+
+  --font-size-nl-body: 18px;
+  --font-size-nl-body--line-height: 1.6;
+
+  --font-size-nl-small: 15px;
+  --font-size-nl-small--line-height: 1.5;
+
+  --font-size-nl-xs: 14px;
+  --font-size-nl-xs--line-height: 1.5;
+
+  --font-size-nl-badge: 11px;
+  --font-size-nl-badge--line-height: 1.5;
+  --font-size-nl-badge--letter-spacing: 0.55px;
+
+  /* === Border Radius === */
+  --radius-nl-card: 20px;
+  --radius-nl-btn: 12px;
+  --radius-nl-badge: 99px;
+  --radius-nl-icon: 16px;
+
+  /* === Box Shadows === */
+  --shadow-nl-card: 0px 4px 16px rgba(15, 28, 46, 0.12);
+  --shadow-nl-btn: 0px 4px 14px rgba(0, 217, 233, 0.25);
+  --shadow-nl-glow: 0px 0px 20px rgba(0, 217, 233, 0.3);
+
+  /* === Spacing === */
+  --spacing-nl-section-x: 212px;
+  --spacing-nl-section-y: 120px;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-dm);
+  color: var(--color-nl-text);
+  background: var(--color-nl-white);
+}
