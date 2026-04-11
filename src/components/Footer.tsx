@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1A2A4F] py-12 px-6 lg:px-8">
+    <footer className="bg-nl-primary py-12 px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Description */}

@@ -2,17 +2,18 @@
 
 @theme inline {
   /* === NanoLab Brand Colors === */
-  --color-nl-primary: #0f1c2e;
-  --color-nl-accent: #00d9e9;
+  --color-nl-primary: #1A2A4F;
+  --color-nl-accent: #32C7CF;
+  --color-nl-secondary: #7285F2;
   --color-nl-surface: #f8f9fa;
   --color-nl-white: #ffffff;
 
   /* === Semantic aliases === */
-  --color-nl-text: #0f1c2e;
-  --color-nl-text-muted: rgba(15, 28, 46, 0.6);
-  --color-nl-border: rgba(15, 28, 46, 0.15);
-  --color-nl-accent-subtle: rgba(0, 217, 233, 0.1);
-  --color-nl-accent-glow: rgba(0, 217, 233, 0.25);
+  --color-nl-text: #1A2A4F;
+  --color-nl-text-muted: rgba(26, 42, 79, 0.6);
+  --color-nl-border: rgba(26, 42, 79, 0.15);
+  --color-nl-accent-subtle: rgba(50, 199, 207, 0.1);
+  --color-nl-accent-glow: rgba(50, 199, 207, 0.25);
 
   /* === Fonts === */
   --font-syne: var(--font-syne-var), sans-serif;
@@ -53,9 +54,9 @@
   --radius-nl-icon: 16px;
 
   /* === Box Shadows === */
-  --shadow-nl-card: 0px 4px 16px rgba(15, 28, 46, 0.12);
-  --shadow-nl-btn: 0px 4px 14px rgba(0, 217, 233, 0.25);
-  --shadow-nl-glow: 0px 0px 20px rgba(0, 217, 233, 0.3);
+  --shadow-nl-card: 0px 4px 16px rgba(26, 42, 79, 0.12);
+  --shadow-nl-btn: 0px 4px 14px rgba(50, 199, 207, 0.25);
+  --shadow-nl-glow: 0px 0px 20px rgba(50, 199, 207, 0.3);
 
   /* === Spacing === */
   --spacing-nl-section-x: 212px;
