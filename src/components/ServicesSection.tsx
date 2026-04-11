@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+
+import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 
 const services = [
@@ -50,25 +50,16 @@ const services = [
 ];
 
 export default function ServicesSection() {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.8], [1, 0.92]);
-  const y = useTransform(scrollYProgress, [0, 0.8], [0, -40]);
 
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <motion.section
-      ref={ref}
+    <section
       id="services"
-      style={{ opacity, scale, y }}
-      className="relative bg-nl-white px-6 lg:px-8 py-20"
+      
+      className="relative bg-white dark:bg-nl-dark px-6 lg:px-8 py-20"
     >
       {/* Background accents */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -82,7 +73,7 @@ export default function ServicesSection() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-syne font-extrabold text-4xl lg:text-5xl tracking-tight text-nl-text mb-4"
+            className="font-syne font-extrabold text-4xl lg:text-5xl tracking-tight text-nl-primary dark:text-white mb-4"
           >
             Nos Offres
           </motion.h2>
@@ -91,7 +82,7 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-dm font-medium text-lg lg:text-xl leading-relaxed text-nl-text-muted max-w-3xl mx-auto"
+            className="font-dm font-medium text-lg lg:text-xl leading-relaxed text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
           >
             Des solutions complètes pour accélérer votre croissance digitale
           </motion.p>
@@ -106,19 +97,19 @@ export default function ServicesSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -6 }}
-              className="bg-nl-white border border-nl-border rounded-nl-card p-8 shadow-nl-card flex flex-col transition-shadow hover:shadow-nl-glow"
+              className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 rounded-nl-card p-8 shadow-nl-card flex flex-col transition-shadow hover:shadow-nl-glow"
             >
-              <div className="w-14 h-14 bg-nl-accent-subtle rounded-nl-icon flex items-center justify-center mb-6">
+              <div className="w-14 h-14 bg-nl-accent/10 rounded-nl-icon flex items-center justify-center mb-6">
                 <Icon icon={service.icon} className="text-nl-accent" width={28} height={28} />
               </div>
 
-              <h3 className="font-syne font-extrabold text-2xl leading-[1.3] text-nl-text mb-2">
+              <h3 className="font-syne font-extrabold text-2xl leading-[1.3] text-nl-primary dark:text-white mb-2">
                 {service.title}
               </h3>
               <p className="font-dm font-medium text-sm text-nl-accent mb-4">
                 {service.subtitle}
               </p>
-              <p className="font-dm font-medium text-[15px] leading-normal text-nl-text-muted mb-6 flex-grow">
+              <p className="font-dm font-medium text-[15px] leading-normal text-gray-600 dark:text-gray-300 mb-6 flex-grow">
                 {service.description}
               </p>
 
@@ -126,14 +117,14 @@ export default function ServicesSection() {
                 {service.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-nl-accent rounded-full mt-2 shrink-0" />
-                    <span className="font-dm text-sm text-nl-text-muted">{feature}</span>
+                    <span className="font-dm text-sm text-gray-600 dark:text-gray-300">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               <button
                 onClick={scrollToContact}
-                className="mt-auto border border-nl-accent text-nl-text rounded-nl-btn font-dm font-bold text-sm w-full text-center py-3 transition-colors hover:bg-nl-accent-subtle"
+                className="mt-auto border border-nl-accent text-nl-primary dark:text-white rounded-nl-btn font-dm font-bold text-sm w-full text-center py-3 transition-colors hover:bg-nl-accent/10"
               >
                 {service.cta}
               </button>
@@ -141,6 +132,6 @@ export default function ServicesSection() {
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

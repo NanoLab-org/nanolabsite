@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+
+import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 
 const departments = [
@@ -44,21 +44,12 @@ const departments = [
 ];
 
 export default function DepartmentsSection() {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.8], [1, 0.92]);
-  const y = useTransform(scrollYProgress, [0, 0.8], [0, -40]);
 
   return (
-    <motion.section
-      ref={ref}
+    <section
       id="departements"
-      style={{ opacity, scale, y }}
-      className="relative bg-nl-surface px-6 lg:px-8 py-20"
+      
+      className="relative bg-gray-50 dark:bg-nl-dark-surface px-6 lg:px-8 py-20"
     >
       <div className="w-full max-w-7xl mx-auto">
         <div className="text-center mb-20">
@@ -67,7 +58,7 @@ export default function DepartmentsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="font-syne font-extrabold text-4xl lg:text-5xl tracking-tight text-nl-text mb-6"
+            className="font-syne font-extrabold text-4xl lg:text-5xl tracking-tight text-nl-primary dark:text-white mb-6"
           >
             Nos 3 Départements
           </motion.h2>
@@ -76,7 +67,7 @@ export default function DepartmentsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-dm font-medium text-lg lg:text-xl leading-relaxed text-nl-text-muted max-w-4xl mx-auto"
+            className="font-dm font-medium text-lg lg:text-xl leading-relaxed text-gray-600 dark:text-gray-300 max-w-4xl mx-auto"
           >
             Une approche intégrée pour transformer vos idées en solutions
             digitales performantes
@@ -94,21 +85,21 @@ export default function DepartmentsSection() {
               whileHover={{ y: -8, transition: { duration: 0.5 } }}
               className="group"
             >
-              <div className="bg-nl-white border border-nl-border p-10 rounded-nl-card shadow-nl-card transition-all duration-500 group-hover:shadow-nl-glow group-hover:border-nl-accent/20 h-full min-h-[420px] flex flex-col">
+              <div className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 p-10 rounded-nl-card shadow-nl-card dark:shadow-none transition-all duration-500 group-hover:shadow-nl-glow group-hover:border-nl-accent/20 h-full min-h-[420px] flex flex-col">
                 {/* Icon */}
                 <motion.div
-                  className="w-20 h-20 bg-nl-accent-subtle rounded-nl-card flex items-center justify-center mx-auto mb-8"
+                  className="w-20 h-20 bg-nl-accent/10 rounded-nl-card flex items-center justify-center mx-auto mb-8"
                   whileHover={{ scale: 1.1, rotate: -5 }}
                   transition={{ duration: 0.5 }}
                 >
                   <Icon icon={dept.icon} className="text-nl-accent" width={40} height={40} />
                 </motion.div>
 
-                <h3 className="font-syne font-extrabold text-[28px] leading-[1.2] text-nl-text mb-6 text-center">
+                <h3 className="font-syne font-extrabold text-[28px] leading-[1.2] text-nl-primary dark:text-white mb-6 text-center">
                   {dept.title}
                 </h3>
 
-                <p className="font-dm font-medium text-lg lg:text-xl leading-relaxed text-nl-text-muted mb-10 text-center flex-grow">
+                <p className="font-dm font-medium text-lg lg:text-xl leading-relaxed text-gray-600 dark:text-gray-300 mb-10 text-center flex-grow">
                   {dept.description}
                 </p>
 
@@ -123,7 +114,7 @@ export default function DepartmentsSection() {
                       transition={{ delay: index * 0.15 + idx * 0.1, duration: 0.6 }}
                     >
                       <div className="w-2 h-2 bg-nl-accent rounded-full mr-4 shrink-0" />
-                      <span className="font-dm font-medium text-[15px] leading-normal text-nl-text">
+                      <span className="font-dm font-medium text-[15px] leading-normal text-nl-primary dark:text-white">
                         {feature}
                       </span>
                     </motion.div>
@@ -134,6 +125,6 @@ export default function DepartmentsSection() {
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
