@@ -50,4 +50,11 @@ html {
 
 body {
   font-family: var(--font-dm);
+  color: var(--color-nl-primary);
+  background-color: var(--color-nl-white);
+}
+
+.dark body {
+  color: #ffffff;
+  background-color: #0D1525;
 }
