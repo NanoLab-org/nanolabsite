@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+
+import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 
 const steps = [
@@ -36,21 +36,12 @@ const steps = [
 ];
 
 export default function ProcessSection() {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.8], [1, 0.92]);
-  const y = useTransform(scrollYProgress, [0, 0.8], [0, -40]);
 
   return (
-    <motion.section
-      ref={ref}
+    <section
       id="process"
-      style={{ opacity, scale, y }}
-      className="relative bg-nl-surface px-6 lg:px-8 py-20"
+      
+      className="relative bg-gray-50 dark:bg-nl-dark-surface px-6 lg:px-8 py-20"
     >
       <div className="w-full max-w-4xl mx-auto">
         <div className="text-center mb-16">
@@ -58,7 +49,7 @@ export default function ProcessSection() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-syne font-extrabold text-4xl lg:text-5xl tracking-tight text-nl-text mb-4"
+            className="font-syne font-extrabold text-4xl lg:text-5xl tracking-tight text-nl-primary dark:text-white mb-4"
           >
             Notre Process
           </motion.h2>
@@ -67,7 +58,7 @@ export default function ProcessSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-dm font-medium text-lg lg:text-xl leading-relaxed text-nl-text-muted max-w-3xl mx-auto"
+            className="font-dm font-medium text-lg lg:text-xl leading-relaxed text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
           >
             Une méthodologie éprouvée pour livrer des projets de qualité dans les
             délais
@@ -89,19 +80,19 @@ export default function ProcessSection() {
                 className="relative flex items-start"
               >
                 {/* Timeline dot */}
-                <div className="hidden lg:flex w-16 h-16 bg-nl-white rounded-full border-2 border-nl-accent shadow-sm items-center justify-center relative z-10 shrink-0">
+                <div className="hidden lg:flex w-16 h-16 bg-white dark:bg-nl-dark-card rounded-full border-2 border-nl-accent shadow-sm items-center justify-center relative z-10 shrink-0">
                   <Icon icon={step.icon} className="text-nl-accent" width={28} height={28} />
                 </div>
 
                 {/* Card */}
-                <div className="lg:ml-8 bg-nl-white p-8 rounded-nl-card border border-nl-border shadow-nl-card w-full">
+                <div className="lg:ml-8 bg-white dark:bg-nl-dark-card p-8 rounded-nl-card border border-gray-200/60 dark:border-white/10 shadow-nl-card w-full">
                   {/* Mobile icon */}
                   <div className="flex items-center gap-4 mb-4 lg:hidden">
-                    <div className="w-12 h-12 bg-nl-accent-subtle rounded-nl-icon flex items-center justify-center">
+                    <div className="w-12 h-12 bg-nl-accent/10 rounded-nl-icon flex items-center justify-center">
                       <Icon icon={step.icon} className="text-nl-accent" width={24} height={24} />
                     </div>
                     <div>
-                      <h3 className="font-syne font-extrabold text-2xl leading-[1.3] text-nl-text">
+                      <h3 className="font-syne font-extrabold text-2xl leading-[1.3] text-nl-primary dark:text-white">
                         {step.title}
                       </h3>
                       <p className="font-dm font-medium text-sm text-nl-accent">
@@ -112,7 +103,7 @@ export default function ProcessSection() {
 
                   {/* Desktop heading */}
                   <div className="hidden lg:block mb-4">
-                    <h3 className="font-syne font-extrabold text-2xl leading-[1.3] text-nl-text">
+                    <h3 className="font-syne font-extrabold text-2xl leading-[1.3] text-nl-primary dark:text-white">
                       {step.title}
                     </h3>
                     <p className="font-dm font-medium text-sm text-nl-accent">
@@ -120,7 +111,7 @@ export default function ProcessSection() {
                     </p>
                   </div>
 
-                  <p className="font-dm font-medium text-[15px] leading-normal text-nl-text-muted">
+                  <p className="font-dm font-medium text-[15px] leading-normal text-gray-600 dark:text-gray-300">
                     {step.description}
                   </p>
                 </div>
@@ -129,6 +120,6 @@ export default function ProcessSection() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
