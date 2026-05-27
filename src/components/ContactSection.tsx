@@ -157,10 +157,10 @@ export default function ContactSection() {
                       className={inputClass}
                     >
                       <option value="">Budget estimé</option>
-                      <option value="< 10k€">Moins de 10 000€</option>
-                      <option value="10-25k€">10 000 - 25 000€</option>
-                      <option value="25-50k€">25 000 - 50 000€</option>
-                      <option value="50k€+">Plus de 50 000€</option>
+                      <option value="< 5k TND">Moins de 5 000 TND</option>
+                      <option value="5-15k TND">5 000 - 15 000 TND</option>
+                      <option value="15-30k TND">15 000 - 30 000 TND</option>
+                      <option value="30k+ TND">Plus de 30 000 TND</option>
                     </select>
                   </div>
                 </div>
@@ -203,7 +203,6 @@ export default function ContactSection() {
               <div className="space-y-5">
                 {[
                   { icon: "mdi:email-outline", label: "Email", value: "contact@nanolab.tn" },
-                  { icon: "mdi:phone-outline", label: "Téléphone", value: "+216 XX XXX XXX" },
                   { icon: "mdi:map-marker-outline", label: "Localisation", value: "Tunis, Tunisie" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-3">
@@ -219,37 +218,6 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Schedule call */}
-            <div className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 rounded-nl-card p-8 shadow-nl-card text-center">
-              <Icon icon="mdi:calendar-outline" className="text-nl-accent mx-auto mb-4" width={40} />
-              <h3 className="font-syne font-extrabold text-2xl leading-[1.3] text-nl-primary dark:text-white mb-3">
-                Planifier un Appel
-              </h3>
-              <p className="font-dm text-sm text-gray-600 dark:text-gray-300 mb-6">
-                Réservez un créneau de 30 minutes pour discuter de votre projet
-                en détail.
-              </p>
-              <button className="w-full border border-nl-accent text-nl-primary dark:text-white rounded-nl-btn font-dm font-bold text-sm py-3 transition-colors hover:bg-nl-accent/10">
-                Réserver un appel
-              </button>
-            </div>
-
-            {/* Response time */}
-            <div className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 rounded-nl-card p-8 shadow-nl-card text-center">
-              <h4 className="font-dm font-bold text-sm text-nl-primary dark:text-white mb-2">
-                Temps de réponse
-              </h4>
-              <motion.p
-                className="font-syne font-extrabold text-4xl lg:text-5xl tracking-tight text-nl-accent mb-2"
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              >
-                &lt; 24h
-              </motion.p>
-              <p className="font-dm text-sm text-gray-600 dark:text-gray-300">
-                Nous nous engageons à vous répondre rapidement
-              </p>
-            </div>
           </div>
         </div>
       </div>

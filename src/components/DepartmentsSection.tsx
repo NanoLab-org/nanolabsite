@@ -7,7 +7,7 @@ import { Icon } from "@iconify/react";
 const departments = [
   {
     icon: "mdi:code-tags",
-    title: "Dev & Tech",
+    title: "Dév & Tech",
     description:
       "Création d'applications web & mobile innovantes avec les technologies les plus avancées",
     features: [
@@ -19,7 +19,7 @@ const departments = [
   },
   {
     icon: "mdi:brain",
-    title: "IA & Innovation Lab",
+    title: "IA & Innovation",
     description:
       "POC, prototypes et industrialisation IA pour transformer vos données en avantage concurrentiel",
     features: [
@@ -31,7 +31,7 @@ const departments = [
   },
   {
     icon: "mdi:bullhorn-outline",
-    title: "Marketing & Communication",
+    title: "Marketing & Croissance",
     description:
       "Stratégie digitale et événementiel pour amplifier votre présence et accélérer votre croissance",
     features: [
@@ -83,9 +83,9 @@ export default function DepartmentsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.15 }}
               whileHover={{ y: -8, transition: { duration: 0.5 } }}
-              className="group"
+              className="group h-full"
             >
-              <div className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 p-10 rounded-nl-card shadow-nl-card dark:shadow-none transition-all duration-500 group-hover:shadow-nl-glow group-hover:border-nl-accent/20 h-full min-h-[420px] flex flex-col">
+              <div className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 p-10 rounded-nl-card shadow-nl-card dark:shadow-none transition-all duration-500 group-hover:shadow-nl-glow group-hover:border-nl-accent/20 h-full flex flex-col overflow-hidden">
                 {/* Icon */}
                 <motion.div
                   className="w-20 h-20 bg-nl-accent/10 rounded-nl-card flex items-center justify-center mx-auto mb-8"
@@ -95,7 +95,7 @@ export default function DepartmentsSection() {
                   <Icon icon={dept.icon} className="text-nl-accent" width={40} height={40} />
                 </motion.div>
 
-                <h3 className="font-syne font-extrabold text-[28px] leading-[1.2] text-nl-primary dark:text-white mb-6 text-center">
+                <h3 className="font-syne font-extrabold text-[28px] leading-[1.2] text-nl-primary dark:text-white mb-6 text-center break-words">
                   {dept.title}
                 </h3>
 
