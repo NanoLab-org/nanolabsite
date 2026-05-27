@@ -8,28 +8,24 @@ const steps = [
   {
     icon: "mdi:target",
     title: "Cadrage",
-    subtitle: "1-2 semaines",
     description:
       "Définition des objectifs, scope du projet et planning détaillé avec validation des spécifications.",
   },
   {
     icon: "mdi:palette-outline",
     title: "Design & Prototype",
-    subtitle: "2-3 semaines",
     description:
       "Création des maquettes UX/UI, prototypage interactif et validation utilisateur avant développement.",
   },
   {
     icon: "mdi:code-braces",
     title: "Développement",
-    subtitle: "4-8 semaines",
     description:
       "Développement en sprints agiles avec livraisons fréquentes et tests continus de qualité.",
   },
   {
     icon: "mdi:rocket-launch-outline",
     title: "Lancement + Suivi KPI",
-    subtitle: "Ongoing",
     description:
       "Déploiement en production, formation utilisateurs et suivi des métriques de performance.",
   },
@@ -95,9 +91,6 @@ export default function ProcessSection() {
                       <h3 className="font-syne font-extrabold text-2xl leading-[1.3] text-nl-primary dark:text-white">
                         {step.title}
                       </h3>
-                      <p className="font-dm font-medium text-sm text-nl-accent">
-                        {step.subtitle}
-                      </p>
                     </div>
                   </div>
 
@@ -106,9 +99,6 @@ export default function ProcessSection() {
                     <h3 className="font-syne font-extrabold text-2xl leading-[1.3] text-nl-primary dark:text-white">
                       {step.title}
                     </h3>
-                    <p className="font-dm font-medium text-sm text-nl-accent">
-                      {step.subtitle}
-                    </p>
                   </div>
 
                   <p className="font-dm font-medium text-[15px] leading-normal text-gray-600 dark:text-gray-300">

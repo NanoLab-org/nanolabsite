@@ -69,7 +69,6 @@ export default function Footer() {
             <div className="space-y-3">
               {[
                 { icon: "mdi:email-outline", text: "contact@nanolab.tn" },
-                { icon: "mdi:phone-outline", text: "+216 XX XXX XXX" },
                 { icon: "mdi:map-marker-outline", text: "Tunis, Tunisie" },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2">
