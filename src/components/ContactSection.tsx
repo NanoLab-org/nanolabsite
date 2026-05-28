@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
+import { useTranslations } from "next-intl";
 
 interface FormData {
   nom: string;
@@ -14,6 +15,10 @@ interface FormData {
 }
 
 export default function ContactSection() {
+  const t = useTranslations("contact");
+  const form = useTranslations("contact.form");
+  const besoinOptions = t.raw("form.besoinOptions") as Array<{ value: string; label: string }>;
+  const budgetOptions = t.raw("form.budgetOptions") as Array<{ value: string; label: string }>;
 
   const [formData, setFormData] = useState<FormData>({
     nom: "",
@@ -35,7 +40,7 @@ export default function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
     await new Promise((r) => setTimeout(r, 1000));
-    alert("Merci pour votre message ! Nous vous recontacterons sous 24h.");
+    alert(form("successMessage"));
     setFormData({ nom: "", email: "", societe: "", besoin: "", budget: "", message: "" });
     setIsSubmitting(false);
   };
@@ -56,7 +61,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="font-syne font-extrabold text-4xl lg:text-5xl tracking-tight text-nl-primary dark:text-white mb-4"
           >
-            Parlons de Votre Projet
+            {t("title")}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -65,20 +70,18 @@ export default function ContactSection() {
             transition={{ delay: 0.1 }}
             className="font-dm font-medium text-lg lg:text-xl leading-relaxed text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
           >
-            Prêt à transformer vos idées en réalité digitale ? Contactez-nous
-            pour un échange personnalisé.
+            {t("subtitle")}
           </motion.p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Form */}
           <div className="lg:col-span-2">
             <div className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 rounded-nl-card p-8 shadow-nl-card">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="nom" className="block font-dm font-semibold text-sm text-nl-primary dark:text-white mb-2">
-                      Nom complet *
+                      {form("nomLabel")}
                     </label>
                     <input
                       type="text"
@@ -88,12 +91,12 @@ export default function ContactSection() {
                       value={formData.nom}
                       onChange={handleChange}
                       className={inputClass}
-                      placeholder="Votre nom"
+                      placeholder={form("nomPlaceholder")}
                     />
                   </div>
                   <div>
                     <label htmlFor="email" className="block font-dm font-semibold text-sm text-nl-primary dark:text-white mb-2">
-                      Email *
+                      {form("emailLabel")}
                     </label>
                     <input
                       type="email"
@@ -103,14 +106,14 @@ export default function ContactSection() {
                       value={formData.email}
                       onChange={handleChange}
                       className={inputClass}
-                      placeholder="votre@email.com"
+                      placeholder={form("emailPlaceholder")}
                     />
                   </div>
                 </div>
 
                 <div>
                   <label htmlFor="societe" className="block font-dm font-semibold text-sm text-nl-primary dark:text-white mb-2">
-                    Société
+                    {form("societeLabel")}
                   </label>
                   <input
                     type="text"
@@ -119,14 +122,14 @@ export default function ContactSection() {
                     value={formData.societe}
                     onChange={handleChange}
                     className={inputClass}
-                    placeholder="Nom de votre entreprise"
+                    placeholder={form("societePlaceholder")}
                   />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="besoin" className="block font-dm font-semibold text-sm text-nl-primary dark:text-white mb-2">
-                      Type de besoin *
+                      {form("besoinLabel")}
                     </label>
                     <select
                       id="besoin"
@@ -136,18 +139,15 @@ export default function ContactSection() {
                       onChange={handleChange}
                       className={inputClass}
                     >
-                      <option value="">Sélectionnez votre besoin</option>
-                      <option value="Application web">Application web</option>
-                      <option value="Application mobile">Application mobile</option>
-                      <option value="Solution IA">Solution IA</option>
-                      <option value="Stratégie digitale">Stratégie digitale</option>
-                      <option value="Audit technique">Audit technique</option>
-                      <option value="Autre">Autre</option>
+                      <option value="">{form("besoinPlaceholder")}</option>
+                      {besoinOptions.map((opt) => (
+                        <option key={opt.value} value={opt.value}>{opt.label}</option>
+                      ))}
                     </select>
                   </div>
                   <div>
                     <label htmlFor="budget" className="block font-dm font-semibold text-sm text-nl-primary dark:text-white mb-2">
-                      Budget estimé
+                      {form("budgetLabel")}
                     </label>
                     <select
                       id="budget"
@@ -156,18 +156,17 @@ export default function ContactSection() {
                       onChange={handleChange}
                       className={inputClass}
                     >
-                      <option value="">Budget estimé</option>
-                      <option value="< 5k TND">Moins de 5 000 TND</option>
-                      <option value="5-15k TND">5 000 - 15 000 TND</option>
-                      <option value="15-30k TND">15 000 - 30 000 TND</option>
-                      <option value="30k+ TND">Plus de 30 000 TND</option>
+                      <option value="">{form("budgetPlaceholder")}</option>
+                      {budgetOptions.map((opt) => (
+                        <option key={opt.value} value={opt.value}>{opt.label}</option>
+                      ))}
                     </select>
                   </div>
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block font-dm font-semibold text-sm text-nl-primary dark:text-white mb-2">
-                    Décrivez votre projet *
+                    {form("messageLabel")}
                   </label>
                   <textarea
                     id="message"
@@ -177,7 +176,7 @@ export default function ContactSection() {
                     value={formData.message}
                     onChange={handleChange}
                     className={`${inputClass} resize-none`}
-                    placeholder="Décrivez vos objectifs, contraintes, et tout élément important pour comprendre votre besoin..."
+                    placeholder={form("messagePlaceholder")}
                   />
                 </div>
 
@@ -186,24 +185,22 @@ export default function ContactSection() {
                   disabled={isSubmitting}
                   className="w-full bg-nl-accent text-nl-primary shadow-nl-btn rounded-nl-btn font-dm font-bold text-sm py-4 transition-opacity hover:opacity-90 disabled:opacity-50 flex items-center justify-center gap-2"
                 >
-                  {isSubmitting ? "Envoi en cours..." : "Envoyer ma demande"}
+                  {isSubmitting ? form("submitting") : form("submit")}
                   <Icon icon="mdi:send" width={18} />
                 </button>
               </form>
             </div>
           </div>
 
-          {/* Info sidebar */}
           <div className="space-y-6">
-            {/* Contact info */}
             <div className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 rounded-nl-card p-8 shadow-nl-card">
               <h3 className="font-syne font-extrabold text-2xl leading-[1.3] text-nl-primary dark:text-white mb-6">
-                Informations de Contact
+                {t("infoTitle")}
               </h3>
               <div className="space-y-5">
                 {[
-                  { icon: "mdi:email-outline", label: "Email", value: "contact@nanolab.tn" },
-                  { icon: "mdi:map-marker-outline", label: "Localisation", value: "Tunis, Tunisie" },
+                  { icon: "mdi:email-outline", label: t("emailLabel"), value: "contact@nanolab.tn" },
+                  { icon: "mdi:map-marker-outline", label: t("locationLabel"), value: t("location") },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-nl-accent/10 rounded-nl-icon flex items-center justify-center shrink-0">
@@ -217,7 +214,6 @@ export default function ContactSection() {
                 ))}
               </div>
             </div>
-
           </div>
         </div>
       </div>

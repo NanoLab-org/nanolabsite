@@ -1,23 +1,24 @@
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import { getTranslations } from "next-intl/server";
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getTranslations("footer");
+  const links = t.raw("links") as Array<{ label: string; href: string }>;
+
   return (
     <footer className="bg-nl-primary dark:bg-nl-dark-footer py-12 px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo & Description */}
           <div className="md:col-span-2">
-            <Link href="/" aria-label="NanoLab - Accueil">
+            <Link href="/" aria-label={t("ariaHome")}>
               <span className="font-syne font-extrabold text-2xl tracking-tight">
                 <span className="text-white">Nano</span>
                 <span className="text-nl-accent">Lab</span>
               </span>
             </Link>
             <p className="font-dm text-sm text-white/60 mt-4 max-w-md">
-              Studio produit et laboratoire IA spécialisé dans la création
-              d&apos;applications innovantes et de solutions data-driven pour les
-              entreprises.
+              {t("description")}
             </p>
             <div className="flex gap-4 mt-6">
               {[
@@ -37,18 +38,12 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navigation */}
           <div>
             <h4 className="font-dm font-bold text-sm text-white mb-4">
-              Navigation
+              {t("navigationTitle")}
             </h4>
             <ul className="space-y-2">
-              {[
-                { label: "Nos Services", href: "#services" },
-                { label: "Lab IA", href: "#lab-ia" },
-                { label: "Réalisations", href: "#realisations" },
-                { label: "À propos", href: "#a-propos" },
-              ].map((link) => (
+              {links.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
@@ -61,10 +56,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h4 className="font-dm font-bold text-sm text-white mb-4">
-              Contact
+              {t("contactTitle")}
             </h4>
             <div className="space-y-3">
               {[
@@ -80,12 +74,11 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="border-t border-nl-white/10 mt-8 pt-8 text-center">
           <p className="font-dm text-sm text-white/40">
-            © 2025 NanoLab. Tous droits réservés. |{" "}
+            {t("copyright")}{" "}
             <a href="#" className="hover:text-nl-accent transition-colors">
-              Mentions légales
+              {t("legal")}
             </a>
           </p>
         </div>

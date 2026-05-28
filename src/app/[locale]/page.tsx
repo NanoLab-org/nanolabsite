@@ -7,7 +7,6 @@ import PortfolioSection from "@/components/PortfolioSection";
 import AILabSection from "@/components/AILabSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
-
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -23,7 +22,6 @@ export default function Home() {
         <AILabSection />
         <AboutSection />
         <ContactSection />
-
       </main>
       <Footer />
     </>
