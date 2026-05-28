@@ -1,0 +1,265 @@
+{
+  "metadata": {
+    "title": "NanoLab | Expert en IA, Dev & Stratégie Digitale — Tunis",
+    "description": "NanoLab est un studio produit et laboratoire IA basé à Tunis. Nous créons des applications, des stratégies et des solutions data/IA pour transformer vos idées en succès digital."
+  },
+  "header": {
+    "nav": {
+      "accueil": "Accueil",
+      "services": "Services",
+      "labIA": "Lab IA",
+      "realisations": "Réalisations",
+      "process": "Process",
+      "aPropos": "À propos",
+      "contact": "Contact"
+    },
+    "cta": "Demander un devis",
+    "ariaHome": "NanoLab - Accueil",
+    "ariaNav": "Navigation principale",
+    "ariaDarkMode": "Basculer le mode sombre",
+    "ariaMenu": "Menu"
+  },
+  "hero": {
+    "tagline": "Build, AI, Growth.",
+    "description": "Studio produit + laboratoire IA. Nous créons des applications, des stratégies et des solutions data/IA pour transformer vos idées en succès digital.",
+    "ctaPrimary": "Parler de votre projet",
+    "ctaSecondary": "Voir nos services",
+    "badge": "Innovation · Technology · Growth"
+  },
+  "departments": {
+    "title": "Nos 3 Départements",
+    "subtitle": "Une approche intégrée pour transformer vos idées en solutions digitales performantes",
+    "items": [
+      {
+        "title": "Dév & Tech",
+        "description": "Création d'applications web & mobile innovantes avec les technologies les plus avancées",
+        "features": [
+          "Développement frontend/backend",
+          "Architecture cloud native",
+          "APIs & microservices",
+          "Mobile iOS/Android"
+        ]
+      },
+      {
+        "title": "IA & Innovation",
+        "description": "POC, prototypes et industrialisation IA pour transformer vos données en avantage concurrentiel",
+        "features": [
+          "Machine Learning & Deep Learning",
+          "Computer Vision & NLP",
+          "Recommender Systems",
+          "MLOps & déploiement"
+        ]
+      },
+      {
+        "title": "Marketing & Croissance",
+        "description": "Stratégie digitale et événementiel pour amplifier votre présence et accélérer votre croissance",
+        "features": [
+          "Branding & identité visuelle",
+          "Content marketing",
+          "Growth hacking",
+          "Événements & webinars"
+        ]
+      }
+    ]
+  },
+  "services": {
+    "title": "Nos Offres",
+    "subtitle": "Des solutions complètes pour accélérer votre croissance digitale",
+    "items": [
+      {
+        "title": "Build",
+        "subtitle": "Création d'applications",
+        "description": "Développement sur mesure de vos applications web et mobile avec les dernières technologies.",
+        "features": [
+          "Applications web progressives (PWA)",
+          "Apps mobiles natives & hybrides",
+          "Plateformes e-commerce",
+          "Systèmes de gestion métier"
+        ],
+        "cta": "Découvrir"
+      },
+      {
+        "title": "Strategy",
+        "subtitle": "Go-to-market & acquisition",
+        "description": "Stratégies digitales pour optimiser votre croissance et maximiser votre ROI.",
+        "features": [
+          "Analyse de marché & positionnement",
+          "Stratégies d'acquisition utilisateurs",
+          "Optimisation funnel de conversion",
+          "Analytics & mesure de performance"
+        ],
+        "cta": "Découvrir"
+      },
+      {
+        "title": "Advisory",
+        "subtitle": "Audit & conseil",
+        "description": "Accompagnement stratégique pour optimiser vos processus et votre stack technologique.",
+        "features": [
+          "Audit technique & sécurité",
+          "Architecture & scalabilité",
+          "Transformation digitale",
+          "Formation des équipes"
+        ],
+        "cta": "Découvrir"
+      }
+    ]
+  },
+  "process": {
+    "title": "Notre Process",
+    "subtitle": "Une méthodologie éprouvée pour livrer des projets de qualité dans les délais",
+    "steps": [
+      {
+        "title": "Cadrage",
+        "description": "Définition des objectifs, scope du projet et planning détaillé avec validation des spécifications."
+      },
+      {
+        "title": "Design & Prototype",
+        "description": "Création des maquettes UX/UI, prototypage interactif et validation utilisateur avant développement."
+      },
+      {
+        "title": "Développement",
+        "description": "Développement en sprints agiles avec livraisons fréquentes et tests continus de qualité."
+      },
+      {
+        "title": "Lancement + Suivi KPI",
+        "description": "Déploiement en production, formation utilisateurs et suivi des métriques de performance."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Réalisations & Expertise",
+    "subtitle": "Découvrez notre approche produit et nos domaines d'impact",
+    "project": {
+      "title": "ElBATIMA",
+      "category": "Plateforme BTP + IA",
+      "type": "Projet interne",
+      "description": "Plateforme digitale révolutionnant la gestion de projets BTP avec IA prédictive pour l'optimisation des coûts et délais.",
+      "results": [
+        "Réduction de 30% des délais",
+        "Optimisation des coûts de 25%",
+        "Interface utilisateur primée"
+      ],
+      "status": "En production"
+    },
+    "quote": "Chaque projet est conçu comme un produit, pas comme une simple mission.",
+    "whatWeBuild": "Ce que nous construisons pour nos clients",
+    "domains": [
+      "Applications métier sur mesure",
+      "Solutions IA & data-driven",
+      "Plateformes SaaS B2B",
+      "Automatisation & optimisation",
+      "Produits digitaux scalables"
+    ]
+  },
+  "ailab": {
+    "title": "Le Lab IA",
+    "subtitle": "Notre laboratoire d'innovation pour développer des solutions IA sur mesure",
+    "capabilitiesTitle": "Types de Projets IA",
+    "principlesTitle": "Nos Principes",
+    "capabilities": [
+      {
+        "title": "Natural Language Processing",
+        "description": "Chatbots intelligents, analyse de sentiment, traduction automatique"
+      },
+      {
+        "title": "Computer Vision",
+        "description": "Reconnaissance d'objets, OCR, analyse d'images médicales"
+      },
+      {
+        "title": "Recommender Systems",
+        "description": "Personnalisation, systèmes de recommandation, prédiction comportementale"
+      },
+      {
+        "title": "Assistants IA",
+        "description": "Agents conversationnels, automatisation intelligente, support client"
+      }
+    ],
+    "principles": [
+      {
+        "title": "Privacy by Design",
+        "description": "Protection des données personnelles et conformité RGPD native"
+      },
+      {
+        "title": "Évaluation Continue",
+        "description": "Métriques de performance, A/B testing et monitoring en temps réel"
+      },
+      {
+        "title": "MLOps",
+        "description": "Déploiement automatisé, versioning des modèles, CI/CD pour l'IA"
+      }
+    ],
+    "ctaTitle": "Prêt à explorer l'IA pour votre entreprise ?",
+    "ctaDescription": "Nous commençons toujours par un POC pour valider la faisabilité technique et l'impact business avant l'industrialisation.",
+    "ctaButton": "Discuter de votre projet IA"
+  },
+  "about": {
+    "valuesTitle": "Nos Valeurs",
+    "values": [
+      {
+        "title": "Excellence",
+        "description": "Nous visons la perfection dans chaque ligne de code et chaque pixel de design."
+      },
+      {
+        "title": "Passion",
+        "description": "Notre équipe est animée par la passion de créer des solutions qui font la différence."
+      },
+      {
+        "title": "Innovation",
+        "description": "Nous restons à la pointe des technologies pour offrir des solutions d'avant-garde."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Parlons de Votre Projet",
+    "subtitle": "Prêt à transformer vos idées en réalité digitale ? Contactez-nous pour un échange personnalisé.",
+    "infoTitle": "Informations de Contact",
+    "emailLabel": "Email",
+    "locationLabel": "Localisation",
+    "location": "Tunis, Tunisie",
+    "form": {
+      "nomLabel": "Nom complet *",
+      "nomPlaceholder": "Votre nom",
+      "emailLabel": "Email *",
+      "emailPlaceholder": "votre@email.com",
+      "societeLabel": "Société",
+      "societePlaceholder": "Nom de votre entreprise",
+      "besoinLabel": "Type de besoin *",
+      "besoinPlaceholder": "Sélectionnez votre besoin",
+      "besoinOptions": [
+        { "value": "Application web", "label": "Application web" },
+        { "value": "Application mobile", "label": "Application mobile" },
+        { "value": "Solution IA", "label": "Solution IA" },
+        { "value": "Stratégie digitale", "label": "Stratégie digitale" },
+        { "value": "Audit technique", "label": "Audit technique" },
+        { "value": "Autre", "label": "Autre" }
+      ],
+      "budgetLabel": "Budget estimé",
+      "budgetPlaceholder": "Budget estimé",
+      "budgetOptions": [
+        { "value": "< 5k TND", "label": "Moins de 5 000 TND" },
+        { "value": "5-15k TND", "label": "5 000 - 15 000 TND" },
+        { "value": "15-30k TND", "label": "15 000 - 30 000 TND" },
+        { "value": "30k+ TND", "label": "Plus de 30 000 TND" }
+      ],
+      "messageLabel": "Décrivez votre projet *",
+      "messagePlaceholder": "Décrivez vos objectifs, contraintes, et tout élément important pour comprendre votre besoin...",
+      "submit": "Envoyer ma demande",
+      "submitting": "Envoi en cours...",
+      "successMessage": "Merci pour votre message ! Nous vous recontacterons sous 24h."
+    }
+  },
+  "footer": {
+    "description": "Studio produit et laboratoire IA spécialisé dans la création d'applications innovantes et de solutions data-driven pour les entreprises.",
+    "navigationTitle": "Navigation",
+    "contactTitle": "Contact",
+    "links": [
+      { "label": "Nos Services", "href": "#services" },
+      { "label": "Lab IA", "href": "#lab-ia" },
+      { "label": "Réalisations", "href": "#realisations" },
+      { "label": "À propos", "href": "#a-propos" }
+    ],
+    "copyright": "© 2025 NanoLab. Tous droits réservés.",
+    "legal": "Mentions légales",
+    "ariaHome": "NanoLab - Accueil"
+  }
+}

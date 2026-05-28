@@ -1,0 +1,265 @@
+{
+  "metadata": {
+    "title": "NanoLab | AI, Dev & Digital Strategy Expert — Tunis",
+    "description": "NanoLab is a product studio and AI lab based in Tunis. We build applications, strategies and data/AI solutions to turn your ideas into digital success."
+  },
+  "header": {
+    "nav": {
+      "accueil": "Home",
+      "services": "Services",
+      "labIA": "AI Lab",
+      "realisations": "Work",
+      "process": "Process",
+      "aPropos": "About",
+      "contact": "Contact"
+    },
+    "cta": "Get a quote",
+    "ariaHome": "NanoLab - Home",
+    "ariaNav": "Main navigation",
+    "ariaDarkMode": "Toggle dark mode",
+    "ariaMenu": "Menu"
+  },
+  "hero": {
+    "tagline": "Build, AI, Growth.",
+    "description": "Product studio + AI lab. We build applications, strategies and data/AI solutions to turn your ideas into digital success.",
+    "ctaPrimary": "Talk about your project",
+    "ctaSecondary": "See our services",
+    "badge": "Innovation · Technology · Growth"
+  },
+  "departments": {
+    "title": "Our 3 Departments",
+    "subtitle": "An integrated approach to transform your ideas into high-performing digital solutions",
+    "items": [
+      {
+        "title": "Dev & Tech",
+        "description": "Building innovative web & mobile applications with the most advanced technologies",
+        "features": [
+          "Frontend/backend development",
+          "Cloud native architecture",
+          "APIs & microservices",
+          "Mobile iOS/Android"
+        ]
+      },
+      {
+        "title": "AI & Innovation",
+        "description": "POC, prototypes and AI industrialization to turn your data into a competitive advantage",
+        "features": [
+          "Machine Learning & Deep Learning",
+          "Computer Vision & NLP",
+          "Recommender Systems",
+          "MLOps & deployment"
+        ]
+      },
+      {
+        "title": "Marketing & Growth",
+        "description": "Digital strategy and events to amplify your presence and accelerate your growth",
+        "features": [
+          "Branding & visual identity",
+          "Content marketing",
+          "Growth hacking",
+          "Events & webinars"
+        ]
+      }
+    ]
+  },
+  "services": {
+    "title": "Our Offers",
+    "subtitle": "Complete solutions to accelerate your digital growth",
+    "items": [
+      {
+        "title": "Build",
+        "subtitle": "Application development",
+        "description": "Custom development of your web and mobile applications with the latest technologies.",
+        "features": [
+          "Progressive web apps (PWA)",
+          "Native & hybrid mobile apps",
+          "E-commerce platforms",
+          "Business management systems"
+        ],
+        "cta": "Discover"
+      },
+      {
+        "title": "Strategy",
+        "subtitle": "Go-to-market & acquisition",
+        "description": "Digital strategies to optimize your growth and maximize your ROI.",
+        "features": [
+          "Market analysis & positioning",
+          "User acquisition strategies",
+          "Conversion funnel optimization",
+          "Analytics & performance measurement"
+        ],
+        "cta": "Discover"
+      },
+      {
+        "title": "Advisory",
+        "subtitle": "Audit & consulting",
+        "description": "Strategic support to optimize your processes and technology stack.",
+        "features": [
+          "Technical & security audit",
+          "Architecture & scalability",
+          "Digital transformation",
+          "Team training"
+        ],
+        "cta": "Discover"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Process",
+    "subtitle": "A proven methodology to deliver quality projects on time",
+    "steps": [
+      {
+        "title": "Scoping",
+        "description": "Defining objectives, project scope and detailed planning with specification validation."
+      },
+      {
+        "title": "Design & Prototype",
+        "description": "Creating UX/UI mockups, interactive prototyping and user validation before development."
+      },
+      {
+        "title": "Development",
+        "description": "Development in agile sprints with frequent deliveries and continuous quality testing."
+      },
+      {
+        "title": "Launch + KPI Tracking",
+        "description": "Production deployment, user training and performance metrics monitoring."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Work & Expertise",
+    "subtitle": "Discover our product approach and areas of impact",
+    "project": {
+      "title": "ElBATIMA",
+      "category": "Construction Platform + AI",
+      "type": "Internal project",
+      "description": "Digital platform revolutionizing construction project management with predictive AI for cost and timeline optimization.",
+      "results": [
+        "30% reduction in timelines",
+        "25% cost optimization",
+        "Award-winning user interface"
+      ],
+      "status": "In production"
+    },
+    "quote": "Every project is designed as a product, not just a mission.",
+    "whatWeBuild": "What we build for our clients",
+    "domains": [
+      "Custom business applications",
+      "AI & data-driven solutions",
+      "B2B SaaS platforms",
+      "Automation & optimization",
+      "Scalable digital products"
+    ]
+  },
+  "ailab": {
+    "title": "The AI Lab",
+    "subtitle": "Our innovation laboratory to develop custom AI solutions",
+    "capabilitiesTitle": "AI Project Types",
+    "principlesTitle": "Our Principles",
+    "capabilities": [
+      {
+        "title": "Natural Language Processing",
+        "description": "Intelligent chatbots, sentiment analysis, automatic translation"
+      },
+      {
+        "title": "Computer Vision",
+        "description": "Object recognition, OCR, medical image analysis"
+      },
+      {
+        "title": "Recommender Systems",
+        "description": "Personalization, recommendation systems, behavioral prediction"
+      },
+      {
+        "title": "AI Assistants",
+        "description": "Conversational agents, intelligent automation, customer support"
+      }
+    ],
+    "principles": [
+      {
+        "title": "Privacy by Design",
+        "description": "Personal data protection and native GDPR compliance"
+      },
+      {
+        "title": "Continuous Evaluation",
+        "description": "Performance metrics, A/B testing and real-time monitoring"
+      },
+      {
+        "title": "MLOps",
+        "description": "Automated deployment, model versioning, CI/CD for AI"
+      }
+    ],
+    "ctaTitle": "Ready to explore AI for your business?",
+    "ctaDescription": "We always start with a POC to validate technical feasibility and business impact before industrialization.",
+    "ctaButton": "Discuss your AI project"
+  },
+  "about": {
+    "valuesTitle": "Our Values",
+    "values": [
+      {
+        "title": "Excellence",
+        "description": "We aim for perfection in every line of code and every pixel of design."
+      },
+      {
+        "title": "Passion",
+        "description": "Our team is driven by the passion to create solutions that make a difference."
+      },
+      {
+        "title": "Innovation",
+        "description": "We stay at the forefront of technology to offer cutting-edge solutions."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let's Talk About Your Project",
+    "subtitle": "Ready to turn your ideas into digital reality? Contact us for a personalized discussion.",
+    "infoTitle": "Contact Information",
+    "emailLabel": "Email",
+    "locationLabel": "Location",
+    "location": "Tunis, Tunisia",
+    "form": {
+      "nomLabel": "Full name *",
+      "nomPlaceholder": "Your name",
+      "emailLabel": "Email *",
+      "emailPlaceholder": "your@email.com",
+      "societeLabel": "Company",
+      "societePlaceholder": "Your company name",
+      "besoinLabel": "Type of need *",
+      "besoinPlaceholder": "Select your need",
+      "besoinOptions": [
+        { "value": "Application web", "label": "Web application" },
+        { "value": "Application mobile", "label": "Mobile application" },
+        { "value": "Solution IA", "label": "AI solution" },
+        { "value": "Stratégie digitale", "label": "Digital strategy" },
+        { "value": "Audit technique", "label": "Technical audit" },
+        { "value": "Autre", "label": "Other" }
+      ],
+      "budgetLabel": "Estimated budget",
+      "budgetPlaceholder": "Estimated budget",
+      "budgetOptions": [
+        { "value": "< 5k TND", "label": "Less than 5,000 TND" },
+        { "value": "5-15k TND", "label": "5,000 - 15,000 TND" },
+        { "value": "15-30k TND", "label": "15,000 - 30,000 TND" },
+        { "value": "30k+ TND", "label": "More than 30,000 TND" }
+      ],
+      "messageLabel": "Describe your project *",
+      "messagePlaceholder": "Describe your objectives, constraints, and any important details to help us understand your need...",
+      "submit": "Send my request",
+      "submitting": "Sending...",
+      "successMessage": "Thank you for your message! We will get back to you within 24 hours."
+    }
+  },
+  "footer": {
+    "description": "Product studio and AI lab specialized in creating innovative applications and data-driven solutions for businesses.",
+    "navigationTitle": "Navigation",
+    "contactTitle": "Contact",
+    "links": [
+      { "label": "Our Services", "href": "#services" },
+      { "label": "AI Lab", "href": "#lab-ia" },
+      { "label": "Work", "href": "#realisations" },
+      { "label": "About", "href": "#a-propos" }
+    ],
+    "copyright": "© 2025 NanoLab. All rights reserved.",
+    "legal": "Legal notice",
+    "ariaHome": "NanoLab - Home"
+  }
+}

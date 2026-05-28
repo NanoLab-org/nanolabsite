@@ -5,22 +5,25 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react";
 import { useDarkMode } from "@/hooks/useDarkMode";
-
-const navItems = [
-  { id: "accueil", label: "Accueil", href: "#accueil" },
-  { id: "services", label: "Services", href: "#services" },
-  { id: "lab-ia", label: "Lab IA", href: "#lab-ia" },
-  { id: "realisations", label: "Réalisations", href: "#realisations" },
-  { id: "process", label: "Process", href: "#process" },
-  { id: "a-propos", label: "À propos", href: "#a-propos" },
-  { id: "contact", label: "Contact", href: "#contact" },
-];
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {
+  const t = useTranslations("header");
   const [activeSection, setActiveSection] = useState("accueil");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { isDark, toggle: toggleDark } = useDarkMode();
+
+  const navItems = [
+    { id: "accueil", label: t("nav.accueil"), href: "#accueil" },
+    { id: "services", label: t("nav.services"), href: "#services" },
+    { id: "lab-ia", label: t("nav.labIA"), href: "#lab-ia" },
+    { id: "realisations", label: t("nav.realisations"), href: "#realisations" },
+    { id: "process", label: t("nav.process"), href: "#process" },
+    { id: "a-propos", label: t("nav.aPropos"), href: "#a-propos" },
+    { id: "contact", label: t("nav.contact"), href: "#contact" },
+  ];
 
   useEffect(() => {
     const onScroll = () => {
@@ -53,14 +56,14 @@ export default function Header() {
       }`}
     >
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
-        <Link href="/" aria-label="NanoLab - Accueil">
+        <Link href="/" aria-label={t("ariaHome")}>
           <span className="font-syne font-extrabold text-2xl tracking-tight">
             <span className="text-nl-primary dark:text-white">Nano</span>
             <span className="text-nl-accent">Lab</span>
           </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8" aria-label="Navigation principale">
+        <nav className="hidden lg:flex items-center gap-8" aria-label={t("ariaNav")}>
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -77,17 +80,19 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
+          <LanguageSwitcher />
+
           <button
             onClick={() => scrollTo("contact")}
             className="hidden sm:inline-flex bg-nl-primary text-white font-dm font-bold text-sm px-6 py-3 rounded-nl-btn transition-opacity hover:opacity-90"
           >
-            Demander un devis
+            {t("cta")}
           </button>
 
           <button
             onClick={toggleDark}
             className="p-2 text-nl-primary dark:text-gray-300 hover:text-nl-accent transition-colors"
-            aria-label="Basculer le mode sombre"
+            aria-label={t("ariaDarkMode")}
           >
             <Icon icon={isDark ? "mdi:weather-sunny" : "mdi:weather-night"} width={20} />
           </button>
@@ -95,7 +100,7 @@ export default function Header() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="lg:hidden p-2 text-nl-primary dark:text-gray-300 hover:text-nl-accent transition-colors"
-            aria-label="Menu"
+            aria-label={t("ariaMenu")}
           >
             <Icon icon={mobileOpen ? "mdi:close" : "mdi:menu"} width={24} />
           </button>
@@ -128,7 +133,7 @@ export default function Header() {
                 onClick={() => scrollTo("contact")}
                 className="mt-2 bg-nl-primary text-white font-dm font-bold text-sm px-6 py-3 rounded-nl-btn self-start"
               >
-                Demander un devis
+                {t("cta")}
               </button>
             </nav>
           </motion.div>

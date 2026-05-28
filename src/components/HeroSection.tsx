@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import { BackgroundPaths } from "@/components/ui/background-paths";
+import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
+  const t = useTranslations("hero");
+
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -32,7 +35,7 @@ export default function HeroSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                Build, AI, Growth.
+                {t("tagline")}
                 <motion.span
                   className="absolute -inset-1 bg-nl-accent/10 rounded-lg -z-10"
                   initial={{ scale: 0, opacity: 0 }}
@@ -48,9 +51,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="font-dm font-medium text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
             >
-              Studio produit + laboratoire IA. Nous créons des applications, des
-              stratégies et des solutions data/IA pour transformer vos idées en
-              succès digital.
+              {t("description")}
             </motion.p>
           </motion.div>
 
@@ -64,7 +65,7 @@ export default function HeroSection() {
               onClick={() => scrollTo("contact")}
               className="group bg-nl-accent text-nl-primary shadow-nl-btn rounded-nl-btn font-dm font-bold text-base px-8 py-4 transition-opacity hover:opacity-90 flex items-center justify-center gap-2"
             >
-              Parler de votre projet
+              {t("ctaPrimary")}
               <Icon icon="mdi:arrow-right" width={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
             <button
@@ -72,7 +73,7 @@ export default function HeroSection() {
               className="group border border-nl-accent text-nl-primary dark:text-white rounded-nl-btn font-dm font-bold text-base px-8 py-4 transition-colors hover:bg-nl-accent/10 flex items-center justify-center gap-2"
             >
               <Icon icon="mdi:play" width={20} className="group-hover:scale-110 transition-transform" />
-              Voir nos services
+              {t("ctaSecondary")}
             </button>
           </motion.div>
 
@@ -83,7 +84,7 @@ export default function HeroSection() {
             className="flex items-center gap-3 font-dm text-sm text-gray-500 dark:text-gray-400 justify-center"
           >
             <Icon icon="mdi:sparkles" width={16} className="text-nl-accent" />
-            <span>Innovation · Technology · Growth</span>
+            <span>{t("badge")}</span>
           </motion.div>
         </div>
       </div>
