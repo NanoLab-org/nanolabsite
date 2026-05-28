@@ -1,54 +1,18 @@
 "use client";
 
-
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
+import { useTranslations } from "next-intl";
 
-const departments = [
-  {
-    icon: "mdi:code-tags",
-    title: "Dév & Tech",
-    description:
-      "Création d'applications web & mobile innovantes avec les technologies les plus avancées",
-    features: [
-      "Développement frontend/backend",
-      "Architecture cloud native",
-      "APIs & microservices",
-      "Mobile iOS/Android",
-    ],
-  },
-  {
-    icon: "mdi:brain",
-    title: "IA & Innovation",
-    description:
-      "POC, prototypes et industrialisation IA pour transformer vos données en avantage concurrentiel",
-    features: [
-      "Machine Learning & Deep Learning",
-      "Computer Vision & NLP",
-      "Recommender Systems",
-      "MLOps & déploiement",
-    ],
-  },
-  {
-    icon: "mdi:bullhorn-outline",
-    title: "Marketing & Croissance",
-    description:
-      "Stratégie digitale et événementiel pour amplifier votre présence et accélérer votre croissance",
-    features: [
-      "Branding & identité visuelle",
-      "Content marketing",
-      "Growth hacking",
-      "Événements & webinars",
-    ],
-  },
-];
+const icons = ["mdi:code-tags", "mdi:brain", "mdi:bullhorn-outline"];
 
 export default function DepartmentsSection() {
+  const t = useTranslations("departments");
+  const items = t.raw("items") as Array<{ title: string; description: string; features: string[] }>;
 
   return (
     <section
       id="departements"
-      
       className="relative bg-gray-50 dark:bg-nl-dark-surface px-6 lg:px-8 py-20"
     >
       <div className="w-full max-w-7xl mx-auto">
@@ -60,7 +24,7 @@ export default function DepartmentsSection() {
             transition={{ duration: 0.8 }}
             className="font-syne font-extrabold text-4xl lg:text-5xl tracking-tight text-nl-primary dark:text-white mb-6"
           >
-            Nos 3 Départements
+            {t("title")}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -69,15 +33,14 @@ export default function DepartmentsSection() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="font-dm font-medium text-lg lg:text-xl leading-relaxed text-gray-600 dark:text-gray-300 max-w-4xl mx-auto"
           >
-            Une approche intégrée pour transformer vos idées en solutions
-            digitales performantes
+            {t("subtitle")}
           </motion.p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-          {departments.map((dept, index) => (
+          {items.map((dept, index) => (
             <motion.div
-              key={dept.title}
+              key={index}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -86,13 +49,12 @@ export default function DepartmentsSection() {
               className="group h-full"
             >
               <div className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 p-10 rounded-nl-card shadow-nl-card dark:shadow-none transition-all duration-500 group-hover:shadow-nl-glow group-hover:border-nl-accent/20 h-full flex flex-col overflow-hidden">
-                {/* Icon */}
                 <motion.div
                   className="w-20 h-20 bg-nl-accent/10 rounded-nl-card flex items-center justify-center mx-auto mb-8"
                   whileHover={{ scale: 1.1, rotate: -5 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Icon icon={dept.icon} className="text-nl-accent" width={40} height={40} />
+                  <Icon icon={icons[index]} className="text-nl-accent" width={40} height={40} />
                 </motion.div>
 
                 <h3 className="font-syne font-extrabold text-[28px] leading-[1.2] text-nl-primary dark:text-white mb-6 text-center break-words">
