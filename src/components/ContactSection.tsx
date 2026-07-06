@@ -28,7 +28,10 @@ export default function ContactSection() {
     budget: "",
     message: "",
   });
+  // Honeypot value — must stay empty for a real user.
+  const [website, setWebsite] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -39,10 +42,21 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1000));
-    alert(form("successMessage"));
-    setFormData({ nom: "", email: "", societe: "", besoin: "", budget: "", message: "" });
-    setIsSubmitting(false);
+    setStatus("idle");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, website }),
+      });
+      if (!res.ok) throw new Error("request_failed");
+      setStatus("success");
+      setFormData({ nom: "", email: "", societe: "", besoin: "", budget: "", message: "" });
+    } catch {
+      setStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputClass =
@@ -78,6 +92,17 @@ export default function ContactSection() {
           <div className="lg:col-span-2">
             <div className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 rounded-nl-card p-8 shadow-nl-card">
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Honeypot — hidden from users, bots fill it and get silently dropped */}
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={website}
+                  onChange={(e) => setWebsite(e.target.value)}
+                  className="hidden"
+                  aria-hidden="true"
+                />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="nom" className="block font-dm font-semibold text-sm text-nl-primary dark:text-white mb-2">
@@ -188,6 +213,17 @@ export default function ContactSection() {
                   {isSubmitting ? form("submitting") : form("submit")}
                   <Icon icon="mdi:send" width={18} />
                 </button>
+
+                {status === "success" && (
+                  <p className="font-dm text-sm text-green-600 dark:text-green-400 text-center">
+                    {form("successMessage")}
+                  </p>
+                )}
+                {status === "error" && (
+                  <p className="font-dm text-sm text-red-600 dark:text-red-400 text-center">
+                    {form("errorMessage")}
+                  </p>
+                )}
               </form>
             </div>
           </div>
