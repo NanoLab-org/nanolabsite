@@ -23,7 +23,7 @@ export default async function Footer() {
             <div className="flex gap-4 mt-6">
               {[
                 { icon: "mdi:linkedin", label: "LinkedIn" },
-                { icon: "mdi:twitter", label: "Twitter" },
+                { icon: "ri:twitter-x-fill", label: "X" },
                 { icon: "mdi:github", label: "GitHub" },
               ].map((social) => (
                 <a

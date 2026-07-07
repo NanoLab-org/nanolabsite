@@ -11,7 +11,7 @@ export default function CTASection() {
       </h2>
       <Link
         href="#contact"
-        className="bg-nl-accent text-nl-primary shadow-nl-btn rounded-nl-btn font-dm font-bold text-sm px-10 py-4 mt-10 transition-opacity hover:opacity-90"
+        className="bg-nl-accent text-nl-primary shadow-nl-btn rounded-nl-btn font-dm font-bold text-sm px-10 py-4 mt-10 transition-all duration-300 hover:opacity-95 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(50,199,207,0.4)]"
       >
         Discuter de mon projet
       </Link>

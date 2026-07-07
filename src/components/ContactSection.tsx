@@ -74,10 +74,10 @@ export default function ContactSection() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2">
-            <div className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 rounded-nl-card p-8 shadow-nl-card">
-              <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          <div className="lg:col-span-2 h-full">
+            <div className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 rounded-nl-card p-8 shadow-nl-card h-full">
+              <form onSubmit={handleSubmit} className="h-full space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="nom" className="block font-dm font-semibold text-sm text-nl-primary dark:text-white mb-2">
@@ -183,7 +183,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-nl-accent text-nl-primary shadow-nl-btn rounded-nl-btn font-dm font-bold text-sm py-4 transition-opacity hover:opacity-90 disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="w-full bg-nl-accent text-nl-primary shadow-nl-btn rounded-nl-btn font-dm font-bold text-sm py-4 transition-all duration-300 hover:opacity-95 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(50,199,207,0.4)] disabled:opacity-50 disabled:translate-y-0 disabled:shadow-none flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? form("submitting") : form("submit")}
                   <Icon icon="mdi:send" width={18} />
@@ -192,8 +192,8 @@ export default function ContactSection() {
             </div>
           </div>
 
-          <div className="space-y-6">
-            <div className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 rounded-nl-card p-8 shadow-nl-card">
+          <div className="h-full">
+            <div className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 rounded-nl-card p-8 shadow-nl-card h-full flex flex-col justify-center">
               <h3 className="font-syne font-extrabold text-2xl leading-[1.3] text-nl-primary dark:text-white mb-6">
                 {t("infoTitle")}
               </h3>

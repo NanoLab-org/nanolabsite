@@ -35,7 +35,7 @@
   /* === Box Shadows === */
   --shadow-nl-card: 0px 4px 16px rgba(26, 42, 79, 0.12);
   --shadow-nl-btn: 0px 4px 14px rgba(50, 199, 207, 0.25);
-  --shadow-nl-glow: 0px 0px 20px rgba(50, 199, 207, 0.3);
+  --shadow-nl-glow: 0px 0px 32px rgba(50, 199, 207, 0.55);
 
   /* === Spacing === */
   --spacing-nl-section-x: 212px;

@@ -29,7 +29,7 @@ export default function PortfolioSection() {
   return (
     <section
       id="realisations"
-      className="relative bg-white dark:bg-nl-dark px-6 lg:px-8 py-20"
+      className="relative bg-white dark:bg-nl-dark px-6 lg:px-8 pt-12 pb-20"
     >
       <div className="w-full max-w-7xl mx-auto">
         <div className="text-center mb-16">

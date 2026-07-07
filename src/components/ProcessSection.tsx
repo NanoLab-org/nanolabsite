@@ -18,7 +18,7 @@ export default function ProcessSection() {
   return (
     <section
       id="process"
-      className="relative bg-gray-50 dark:bg-nl-dark-surface px-6 lg:px-8 py-20"
+      className="relative bg-gray-50 dark:bg-nl-dark-surface px-6 lg:px-8 pt-20 pb-12"
     >
       <div className="w-full max-w-4xl mx-auto">
         <div className="text-center mb-16">
