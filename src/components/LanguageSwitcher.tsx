@@ -3,12 +3,11 @@
 import { useState, useRef, useEffect } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
-import { FlagTN, FlagUS, FlagFR } from "@/lib/icons";
 
 const locales = [
-  { code: "fr", label: "Français", Flag: FlagFR },
-  { code: "en", label: "English", Flag: FlagUS },
-  { code: "ar", label: "عربي", Flag: FlagTN },
+  { code: "fr", label: "Français", short: "FR" },
+  { code: "en", label: "English", short: "EN" },
+  { code: "ar", label: "عربي", short: "AR" },
 ] as const;
 
 export default function LanguageSwitcher() {
@@ -39,11 +38,11 @@ export default function LanguageSwitcher() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex items-center gap-1.5 p-1.5 rounded-md text-nl-primary dark:text-gray-300 hover:text-nl-accent transition-colors"
+        className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md border border-nl-border dark:border-white/15 text-nl-primary dark:text-gray-300 hover:text-nl-accent hover:border-nl-accent/50 transition-colors font-dm font-semibold text-xs"
         aria-label="Switch language"
         aria-expanded={open}
       >
-        <current.Flag width={22} height={15} />
+        {current.short}
         <svg
           className={`w-3 h-3 transition-transform ${open ? "rotate-180" : ""}`}
           viewBox="0 0 12 12"
@@ -55,7 +54,7 @@ export default function LanguageSwitcher() {
 
       {open && (
         <div className="absolute right-0 mt-1 w-36 bg-white dark:bg-nl-dark border border-nl-border dark:border-white/10 rounded-lg shadow-lg py-1 z-50">
-          {locales.map(({ code, label, Flag }) => (
+          {locales.map(({ code, label, short }) => (
             <button
               key={code}
               onClick={() => switchLocale(code)}
@@ -65,7 +64,7 @@ export default function LanguageSwitcher() {
                   : "text-nl-primary dark:text-gray-300 hover:text-nl-accent"
               }`}
             >
-              <Flag width={20} height={14} />
+              <span className="font-bold text-xs w-6 shrink-0">{short}</span>
               {label}
             </button>
           ))}
