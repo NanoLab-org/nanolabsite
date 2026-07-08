@@ -245,7 +245,8 @@
       "messagePlaceholder": "Décrivez vos objectifs, contraintes, et tout élément important pour comprendre votre besoin...",
       "submit": "Envoyer ma demande",
       "submitting": "Envoi en cours...",
-      "successMessage": "Merci pour votre message ! Nous vous recontacterons sous 24h."
+      "successMessage": "Merci pour votre message ! Nous vous recontacterons sous 24h.",
+      "errorMessage": "Une erreur est survenue. Veuillez réessayer ou nous écrire directement à contact@nanolab.tn."
     }
   },
   "footer": {
