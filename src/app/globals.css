@@ -51,59 +51,6 @@ html {
 body {
   font-family: var(--font-dm);
 }
-@import "tailwindcss";
-
-@theme inline {
-  /* === NanoLab Brand Colors === */
-  --color-nl-primary: #1A2A4F;
-  --color-nl-accent: #32C7CF;
-  --color-nl-secondary: #7285F2;
-  --color-nl-surface: #f8f9fa;
-  --color-nl-white: #ffffff;
-  --color-nl-bg: #ffffff;
-
-  /* === Dark mode colors === */
-  --color-nl-dark: #0D1525;
-  --color-nl-dark-surface: #152236;
-  --color-nl-dark-card: #1A2A4F;
-  --color-nl-dark-footer: #0A0F1A;
-
-  /* === Semantic === */
-  --color-nl-text: #1A2A4F;
-  --color-nl-text-muted: rgba(26, 42, 79, 0.6);
-  --color-nl-border: rgba(26, 42, 79, 0.15);
-  --color-nl-accent-subtle: rgba(50, 199, 207, 0.1);
-  --color-nl-accent-glow: rgba(50, 199, 207, 0.25);
-
-  /* === Fonts === */
-  --font-syne: var(--font-syne-var), sans-serif;
-  --font-dm: var(--font-dm-sans), sans-serif;
-
-  /* === Border Radius === */
-  --radius-nl-card: 20px;
-  --radius-nl-btn: 12px;
-  --radius-nl-badge: 99px;
-  --radius-nl-icon: 16px;
-
-  /* === Box Shadows === */
-  --shadow-nl-card: 0px 4px 16px rgba(26, 42, 79, 0.12);
-  --shadow-nl-btn: 0px 4px 14px rgba(50, 199, 207, 0.25);
-  --shadow-nl-glow: 0px 0px 32px rgba(50, 199, 207, 0.55);
-
-  /* === Spacing === */
-  --spacing-nl-section-x: 212px;
-  --spacing-nl-section-y: 120px;
-}
-
-@custom-variant dark (&:where(.dark, .dark *));
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--font-dm);
-}
 section[id] {
   scroll-margin-top: 72px;
 }
