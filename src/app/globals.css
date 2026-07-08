@@ -51,3 +51,6 @@ html {
 body {
   font-family: var(--font-dm);
 }
+section[id] {
+  scroll-margin-top: 72px;
+}
