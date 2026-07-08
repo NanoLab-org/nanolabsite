@@ -25,20 +25,37 @@ export default function Header() {
     { id: "contact", label: t("nav.contact"), href: "#contact" },
   ];
 
+  // Shadow au scroll (séparé de la détection de section active)
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 10);
-      const ids = navItems.map((n) => n.id);
-      for (let i = ids.length - 1; i >= 0; i--) {
-        const el = document.getElementById(ids[i]);
-        if (el && el.getBoundingClientRect().top <= 120) {
-          setActiveSection(ids[i]);
-          break;
-        }
-      }
-    };
+    const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Détection de la section active via IntersectionObserver
+  useEffect(() => {
+    const ids = ["accueil", "services", "lab-ia", "realisations", "process", "a-propos", "contact"];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-96px 0px -60% 0px",
+        threshold: 0,
+      }
+    );
+
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const scrollTo = (id: string) => {

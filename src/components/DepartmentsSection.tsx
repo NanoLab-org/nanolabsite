@@ -45,10 +45,10 @@ export default function DepartmentsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.15 }}
-              whileHover={{ y: -8, transition: { duration: 0.5 } }}
+              whileHover={{ y: -10, scale: 1.02, transition: { duration: 0.3 } }}
               className="group h-full"
             >
-              <div className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 p-10 rounded-nl-card shadow-nl-card dark:shadow-none transition-all duration-500 group-hover:shadow-nl-glow group-hover:border-nl-accent/20 h-full flex flex-col overflow-hidden">
+              <div className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 p-10 rounded-nl-card shadow-nl-card dark:shadow-[0_0_15px_rgba(50,199,207,0.15)] transition-all duration-500 group-hover:shadow-[0_0_35px_rgba(50,199,207,0.35)] group-hover:border-nl-accent/20 h-full flex flex-col overflow-hidden">
                 <motion.div
                   className="w-20 h-20 bg-nl-accent/10 rounded-nl-card flex items-center justify-center mx-auto mb-8"
                   whileHover={{ scale: 1.1, rotate: -5 }}
