@@ -1,6 +1,6 @@
 [config]
-model = "openrouter/anthropic/claude-sonnet-4"
-fallback_models = ["openrouter/anthropic/claude-3.5-sonnet"]
+model = "openrouter/anthropic/claude-sonnet-5"
+fallback_models = ["openrouter/anthropic/claude-sonnet-4.6"]
 custom_model_max_tokens = 200000
 ai_timeout = 300
 response_language = "en-US"
