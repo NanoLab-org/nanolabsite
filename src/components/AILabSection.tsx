@@ -8,12 +8,11 @@ export default async function AILabSection() {
   const principles = t.raw("principles") as Array<{ title: string; description: string }>;
 
   return (
-    <section
-      id="lab-ia"
-      className="relative bg-nl-primary px-6 lg:px-8 py-20"
-    >
-      <div className="w-full max-w-7xl mx-auto">
+    <section id="lab-ia" className="relative bg-nl-primary dark:bg-nl-dark">
+      <div className="w-full max-w-7xl mx-auto px-6 lg:px-8 py-20">
         <AILabHeading title={t("title")} subtitle={t("subtitle")} />
+      </div>
+      <div style={{ marginLeft: "calc(50% - 50vw)", marginRight: "calc(50% - 50vw)", width: "100vw" }}>
         <AILabContent
           capabilitiesTitle={t("capabilitiesTitle")}
           capabilities={capabilities}

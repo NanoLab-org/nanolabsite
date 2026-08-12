@@ -17,7 +17,7 @@ export default function AnimatedWords({
   className,
   as = "h2",
   trigger = "scroll",
-  wordDelay = 0.08,
+  wordDelay = 0.16,
   startDelay = 0,
 }: AnimatedWordsProps) {
   const words = text.split(" ");
@@ -34,11 +34,11 @@ export default function AnimatedWords({
   };
 
   const wordVariant: Variants = {
-    hidden: { opacity: 0, y: 16 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.7, ease: "easeOut" },
     },
   };
 

@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
+import OrbitalDomains from "./OrbitalDomains";
+
 
 const domainIcons = [
   "mdi:target",
@@ -103,35 +105,26 @@ export default function PortfolioContent({ project, quote, whatWeBuild, domains 
         </div>
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3 }}
-      >
-        <h3 className="font-syne font-extrabold text-2xl leading-[1.3] text-nl-primary dark:text-white text-center mb-10">
-          {whatWeBuild}
-        </h3>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-          {domains.map((domain, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 rounded-nl-card p-6 text-center shadow-nl-card hover:border-nl-accent/30 transition-all group"
-            >
-              <div className="w-12 h-12 bg-nl-accent/10 rounded-nl-icon flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                <Icon icon={domainIcons[index]} className="text-nl-accent" width={24} height={24} />
-              </div>
-              <h4 className="font-dm font-semibold text-sm text-nl-primary dark:text-white">
-                {domain}
-              </h4>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+     <motion.div
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.3 }}
+>
+  <h3 className="font-syne font-extrabold text-2xl leading-[1.3] text-nl-primary dark:text-white text-center mb-10">
+    {whatWeBuild}
+  </h3>
+  <div style={{ marginLeft: "calc(50% - 50vw)", marginRight: "calc(50% - 50vw)", width: "100vw" }}>
+    <OrbitalDomains
+      items={domains.map((domain, index) => ({
+        id: index + 1,
+        title: domain,
+        description: `Notre expertise en ${domain.toLowerCase()} au service de vos projets.`,
+        icon: domainIcons[index],
+      }))}
+    />
+  </div>
+</motion.div>
     </>
   );
 }

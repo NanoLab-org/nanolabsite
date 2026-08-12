@@ -4,6 +4,7 @@ import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { syne, dmSans } from "@/lib/fonts";
+import PageLoader from "@/components/PageLoader";
 import "../globals.css";
 
 const jsonLd = [
@@ -136,6 +137,7 @@ export default async function LocaleLayout({
       </head>
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider messages={messages}>
+          <PageLoader />
           {children}
         </NextIntlClientProvider>
       </body>
