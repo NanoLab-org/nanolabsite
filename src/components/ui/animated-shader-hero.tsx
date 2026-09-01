@@ -30,6 +30,7 @@ const useShaderBackground = () => {
   const animationFrameRef = useRef<number | undefined>(undefined);
   const rendererRef = useRef<WebGLRenderer | null>(null);
   const pointersRef = useRef<PointerHandler | null>(null);
+  const isVisibleRef = useRef(true);
 
   class WebGLRenderer {
     private canvas: HTMLCanvasElement;
@@ -271,11 +272,13 @@ void main(){gl_Position=position;}`;
   const loop = (now: number) => {
     if (!rendererRef.current || !pointersRef.current) return;
 
-    rendererRef.current.updateMouse(pointersRef.current.first);
-    rendererRef.current.updatePointerCount(pointersRef.current.count);
-    rendererRef.current.updatePointerCoords(pointersRef.current.coords);
-    rendererRef.current.updateMove(pointersRef.current.move);
-    rendererRef.current.render(now);
+    if (isVisibleRef.current) {
+      rendererRef.current.updateMouse(pointersRef.current.first);
+      rendererRef.current.updatePointerCount(pointersRef.current.count);
+      rendererRef.current.updatePointerCoords(pointersRef.current.coords);
+      rendererRef.current.updateMove(pointersRef.current.move);
+      rendererRef.current.render(now);
+    }
     animationFrameRef.current = requestAnimationFrame(loop);
   };
 
@@ -301,8 +304,17 @@ void main(){gl_Position=position;}`;
 
     window.addEventListener('resize', resize);
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    observer.observe(canvas);
+
     return () => {
       window.removeEventListener('resize', resize);
+      observer.disconnect();
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
@@ -474,30 +486,30 @@ float fbm(vec2 p) {
   return t;
 }
 float clouds(vec2 p) {
-	float d=1., t=.0;
-	for (float i=.0; i<3.; i++) {
-		float a=d*fbm(i*10.+p.x*.2+.2*(1.+i)*p.y+d+i*i+p);
-		t=mix(t,d,a);
-		d=a;
-		p*=2./(i+1.);
-	}
-	return t;
+        float d=1., t=.0;
+        for (float i=.0; i<3.; i++) {
+                float a=d*fbm(i*10.+p.x*.2+.2*(1.+i)*p.y+d+i*i+p);
+                t=mix(t,d,a);
+                d=a;
+                p*=2./(i+1.);
+        }
+        return t;
 }
 void main(void) {
-	vec2 uv=(FC-.5*R)/MN,st=uv*vec2(2,1);
-	vec3 col=vec3(0);
-	float bg=clouds(vec2(st.x+T*.5,-st.y));
-	uv*=1.-.3*(sin(T*.2)*.5+.5);
-	for (float i=1.; i<12.; i++) {
-		uv+=.1*cos(i*vec2(.1+.01*i, .8)+i*i+T*.5+.1*uv.x);
-		vec2 p=uv;
-		float d=length(p);
-		col+=.00125/d*(cos(sin(i)*vec3(3,2,1))+1.);
-		float b=noise(i+p+bg*1.731);
-		col+=.002*b/length(max(p,vec2(b*p.x*.02,p.y)));
-		col=mix(col,vec3(bg*.04,bg*.16,bg*.22),d);
-	}
-	O=vec4(col,1);
+        vec2 uv=(FC-.5*R)/MN,st=uv*vec2(2,1);
+        vec3 col=vec3(0);
+        float bg=clouds(vec2(st.x+T*.5,-st.y));
+        uv*=1.-.3*(sin(T*.2)*.5+.5);
+        for (float i=1.; i<12.; i++) {
+                uv+=.1*cos(i*vec2(.1+.01*i, .8)+i*i+T*.5+.1*uv.x);
+                vec2 p=uv;
+                float d=length(p);
+                col+=.00125/d*(cos(sin(i)*vec3(3,2,1))+1.);
+                float b=noise(i+p+bg*1.731);
+                col+=.002*b/length(max(p,vec2(b*p.x*.02,p.y)));
+                col=mix(col,vec3(bg*.04,bg*.16,bg*.22),d);
+        }
+        O=vec4(col,1);
 }`;
 
 export default Hero;

@@ -17,9 +17,9 @@ export default function Header() {
 
   const navItems = [
     { id: "services", label: t("nav.services"), href: "#services" },
-    { id: "lab-ia", label: t("nav.labIA"), href: "#lab-ia" },
-    { id: "realisations", label: t("nav.realisations"), href: "#realisations" },
     { id: "process", label: t("nav.process"), href: "#process" },
+    { id: "realisations", label: t("nav.realisations"), href: "#realisations" },
+    { id: "lab-ia", label: t("nav.labIA"), href: "#lab-ia" },
     { id: "a-propos", label: t("nav.aPropos"), href: "#a-propos" },
     { id: "contact", label: t("nav.contact"), href: "#contact" },
   ];
@@ -31,7 +31,7 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    const ids = ["accueil", "services", "lab-ia", "realisations", "process", "a-propos", "contact"];
+    const ids = ["accueil", "services", "process", "realisations", "lab-ia", "a-propos", "contact"];
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -72,7 +72,14 @@ export default function Header() {
       }`}
     >
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
-        <Link href="/" aria-label={t("ariaHome")}>
+                <Link
+          href="/"
+          aria-label={t("ariaHome")}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollTo("accueil");
+          }}
+        >
           <span className="font-syne font-extrabold text-2xl tracking-tight">
             <span className="text-white">Nano</span>
             <span className="text-nl-accent">Lab</span>

@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import AILabHeading from "./AILabHeading";
 import AILabContent from "./AILabContent";
+import SynapseBackground from "./SynapseBackground";
 
 export default async function AILabSection() {
   const t = await getTranslations("ailab");
@@ -8,20 +9,22 @@ export default async function AILabSection() {
   const principles = t.raw("principles") as Array<{ title: string; description: string }>;
 
   return (
-    <section id="lab-ia" className="relative bg-nl-primary dark:bg-nl-dark">
-      <div className="w-full max-w-7xl mx-auto px-6 lg:px-8 py-20">
-        <AILabHeading title={t("title")} subtitle={t("subtitle")} />
-      </div>
-      <div style={{ marginLeft: "calc(50% - 50vw)", marginRight: "calc(50% - 50vw)", width: "100vw" }}>
-        <AILabContent
-          capabilitiesTitle={t("capabilitiesTitle")}
-          capabilities={capabilities}
-          principlesTitle={t("principlesTitle")}
-          principles={principles}
-          ctaTitle={t("ctaTitle")}
-          ctaDescription={t("ctaDescription")}
-          ctaButton={t("ctaButton")}
-        />
+    <section id="lab-ia" className="relative bg-nl-primary overflow-hidden">
+      <SynapseBackground />
+
+      <div className="relative z-10 px-6 lg:px-8 py-20">
+        <div className="w-full max-w-7xl mx-auto">
+          <AILabHeading title={t("title")} subtitle={t("subtitle")} />
+          <AILabContent
+            capabilitiesTitle={t("capabilitiesTitle")}
+            capabilities={capabilities}
+            principlesTitle={t("principlesTitle")}
+            principles={principles}
+            ctaTitle={t("ctaTitle")}
+            ctaDescription={t("ctaDescription")}
+            ctaButton={t("ctaButton")}
+          />
+        </div>
       </div>
     </section>
   );

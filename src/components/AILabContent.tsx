@@ -31,6 +31,17 @@ interface AILabContentProps {
   ctaButton: string;
 }
 
+function HudCorners() {
+  return (
+    <>
+      <span className="absolute top-1.5 left-1.5 w-0 h-0 border-t-2 border-l-2 border-nl-accent opacity-0 rounded-tl-sm transition-all duration-300 group-hover:w-4 group-hover:h-4 group-hover:opacity-100" />
+      <span className="absolute top-1.5 right-1.5 w-0 h-0 border-t-2 border-r-2 border-nl-accent opacity-0 rounded-tr-sm transition-all duration-300 group-hover:w-4 group-hover:h-4 group-hover:opacity-100" />
+      <span className="absolute bottom-1.5 left-1.5 w-0 h-0 border-b-2 border-l-2 border-nl-accent opacity-0 rounded-bl-sm transition-all duration-300 group-hover:w-4 group-hover:h-4 group-hover:opacity-100" />
+      <span className="absolute bottom-1.5 right-1.5 w-0 h-0 border-b-2 border-r-2 border-nl-accent opacity-0 rounded-br-sm transition-all duration-300 group-hover:w-4 group-hover:h-4 group-hover:opacity-100" />
+    </>
+  );
+}
+
 export default function AILabContent({
   capabilitiesTitle,
   capabilities,
@@ -60,8 +71,9 @@ export default function AILabContent({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white/10 backdrop-blur-md p-6 rounded-nl-card border border-white/20 hover:border-nl-accent/40 transition-all shadow-lg"
+                className="group relative bg-white/10 backdrop-blur-md p-6 rounded-nl-card border border-white/20 hover:border-nl-accent/40 transition-all shadow-lg"
               >
+                <HudCorners />
                 <Icon icon={capabilityIcons[index]} className="text-nl-accent mb-4" width={32} height={32} />
                 <h4 className="font-dm font-bold text-[15px] leading-normal text-white mb-2">
                   {cap.title}
@@ -89,8 +101,9 @@ export default function AILabContent({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-start gap-4 bg-white/10 backdrop-blur-md p-6 rounded-nl-card border border-white/20"
+                className="group relative flex items-start gap-4 bg-white/10 backdrop-blur-md p-6 rounded-nl-card border border-white/20 hover:border-nl-accent/40 transition-all"
               >
+                <HudCorners />
                 <div className="w-12 h-12 bg-nl-accent/20 border border-nl-accent/30 rounded-nl-icon flex items-center justify-center shrink-0">
                   <Icon icon={principleIcons[index]} className="text-nl-accent" width={24} height={24} />
                 </div>

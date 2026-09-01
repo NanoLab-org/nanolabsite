@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
-import OrbitalDomains from "./OrbitalDomains";
-
+import DomainsHelix from "./DomainsHelix";
+import HelixFragmentsField from "./HelixStrandDecor";
 
 const domainIcons = [
   "mdi:target",
@@ -106,25 +106,28 @@ export default function PortfolioContent({ project, quote, whatWeBuild, domains 
       </motion.div>
 
      <motion.div
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ delay: 0.3 }}
->
-  <h3 className="font-syne font-extrabold text-2xl leading-[1.3] text-nl-primary dark:text-white text-center mb-10">
-    {whatWeBuild}
-  </h3>
-  <div style={{ marginLeft: "calc(50% - 50vw)", marginRight: "calc(50% - 50vw)", width: "100vw" }}>
-    <OrbitalDomains
-      items={domains.map((domain, index) => ({
-        id: index + 1,
-        title: domain,
-        description: `Notre expertise en ${domain.toLowerCase()} au service de vos projets.`,
-        icon: domainIcons[index],
-      }))}
-    />
-  </div>
-</motion.div>
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 }}
+        className="relative"
+      >
+        <HelixFragmentsField />
+
+        <div className="relative z-10">
+          <h3 className="font-syne font-extrabold text-2xl leading-[1.3] text-nl-primary dark:text-white text-center mb-10">
+            {whatWeBuild}
+          </h3>
+          <DomainsHelix
+            items={domains.map((domain, index) => ({
+              id: index + 1,
+              title: domain,
+              description: `Notre expertise en ${domain.toLowerCase()} au service de vos projets.`,
+              icon: domainIcons[index],
+            }))}
+          />
+        </div>
+      </motion.div>
     </>
   );
 }

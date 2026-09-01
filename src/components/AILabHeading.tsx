@@ -11,11 +11,11 @@ interface AILabHeadingProps {
 export default function AILabHeading({ title, subtitle }: AILabHeadingProps) {
   return (
     <div className="text-center mb-16">
-      <AnimatedWords
+    <AnimatedWords
         text={title}
         as="h2"
         trigger="scroll"
-        className="font-syne font-extrabold text-4xl lg:text-5xl tracking-tight text-white mb-4"
+        className="font-syne font-extrabold text-4xl lg:text-5xl tracking-tight text-white mb-4 [text-shadow:0_0_24px_rgba(50,199,207,0.5)]"
       />
       <motion.p
         initial={{ opacity: 0, y: 30 }}
