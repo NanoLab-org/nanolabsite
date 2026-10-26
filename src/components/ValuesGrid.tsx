@@ -14,6 +14,50 @@ interface ValuesGridProps {
   values: ValueItem[];
 }
 
+function GrowthRingIcon({ icon, delay }: { icon: string; delay: number }) {
+  const circumference = 2 * Math.PI * 42;
+
+  return (
+    <div className="relative w-16 h-16 mx-auto mb-6">
+      <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full -rotate-90">
+        <circle
+          cx="50"
+          cy="50"
+          r="42"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="4"
+          className="text-nl-accent/10"
+        />
+        <motion.circle
+          cx="50"
+          cy="50"
+          r="42"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="4"
+          strokeLinecap="round"
+          className="text-nl-accent"
+          strokeDasharray={circumference}
+          initial={{ strokeDashoffset: circumference }}
+          whileInView={{ strokeDashoffset: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay, ease: "easeOut" }}
+        />
+      </svg>
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center"
+        initial={{ opacity: 0, scale: 0.6 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, delay: delay + 0.9 }}
+      >
+        <Icon icon={icon} className="text-nl-accent" width={28} height={28} />
+      </motion.div>
+    </div>
+  );
+}
+
 export default function ValuesGrid({ values }: ValuesGridProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -26,9 +70,7 @@ export default function ValuesGrid({ values }: ValuesGridProps) {
           transition={{ delay: index * 0.1 }}
           className="bg-white dark:bg-nl-dark-card border border-gray-200/60 dark:border-white/10 rounded-nl-card p-8 shadow-nl-card text-center"
         >
-          <div className="w-16 h-16 bg-nl-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Icon icon={valueIcons[index]} className="text-nl-accent" width={32} height={32} />
-          </div>
+          <GrowthRingIcon icon={valueIcons[index]} delay={index * 0.15} />
           <h4 className="font-syne font-extrabold text-2xl leading-[1.3] text-nl-primary dark:text-white mb-4">
             {value.title}
           </h4>
